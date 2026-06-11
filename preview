@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>返利群发助手预览</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #eef2f6;
+        color: #172033;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+        margin: 0;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .shell {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: minmax(320px, 420px) minmax(360px, 1fr);
+        margin: 0 auto;
+        max-width: 1180px;
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      .phone {
+        align-self: start;
+        background: #111827;
+        border-radius: 34px;
+        box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+        padding: 12px;
+        position: sticky;
+        top: 24px;
+      }
+
+      .screen {
+        background: #f6f7f9;
+        border-radius: 24px;
+        min-height: 760px;
+        overflow: hidden;
+      }
+
+      .status {
+        align-items: center;
+        background: #0f766e;
+        color: #fff;
+        display: flex;
+        font-size: 13px;
+        font-weight: 700;
+        height: 54px;
+        justify-content: center;
+        letter-spacing: 0;
+      }
+
+      .content {
+        display: none;
+        padding: 14px;
+      }
+
+      .content.active {
+        display: block;
+      }
+
+      .section {
+        margin-bottom: 14px;
+      }
+
+      .panel,
+      .product-card,
+      .account-card {
+        background: #fff;
+        border: 1px solid #e6eaf0;
+        border-radius: 8px;
+        padding: 14px;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: 750;
+        line-height: 1.25;
+      }
+
+      .title.small {
+        font-size: 16px;
+      }
+
+      .subtitle {
+        color: #64748b;
+        font-size: 13px;
+        line-height: 1.45;
