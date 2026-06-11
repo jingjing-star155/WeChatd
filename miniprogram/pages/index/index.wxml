@@ -1,0 +1,55 @@
+<view class="page">
+  <view class="section panel">
+    <view class="title">发送返利链接</view>
+    <view class="subtitle">选择微信号、微信群和返利商品，生成待发送文案。</view>
+  </view>
+
+  <view class="section panel">
+    <view class="field">
+      <view class="label">微信号</view>
+      <picker mode="selector" range="{{accounts}}" range-key="name" bindchange="onAccountChange">
+        <view class="picker">{{selectedAccount.name || '请选择微信号'}}</view>
+      </picker>
+    </view>
+    <view class="field">
+      <view class="label">微信群</view>
+      <picker mode="selector" range="{{filteredGroups}}" range-key="name" bindchange="onGroupChange">
+        <view class="picker">{{selectedGroup.name || '请选择微信群'}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="section panel">
+    <view class="row-between">
+      <view>
+        <view class="title small">已筛选商品</view>
+        <view class="subtitle">{{selectedProducts.length}} 个商品可生成群发文案</view>
+      </view>
+      <button class="btn secondary compact" bindtap="goProducts">筛选</button>
+    </view>
+    <checkbox-group bindchange="onProductToggle">
+      <label class="product-row" wx:for="{{products}}" wx:key="id">
+        <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+        <view class="product-main">
+          <view class="product-title">{{item.title}}</view>
+          <view class="product-meta">
+            <text class="tag">{{item.platform}}</text>
+            <text class="tag">{{item.category}}</text>
+            <text class="score">评分 {{item.score}}</text>
+          </view>
+        </view>
+      </label>
+    </checkbox-group>
+    <view wx:if="{{!products.length}}" class="empty">暂无商品，请先到商品页刷新抓取。</view>
+  </view>
+
+  <view class="section panel">
+    <view class="label">发送文案</view>
+    <textarea class="message" maxlength="-1" value="{{message}}" bindinput="onMessageInput" placeholder="选择商品后自动生成，可手动修改" />
+  </view>
+
+  <view class="actions">
+    <button class="btn ghost" bindtap="copyMessage">复制文案</button>
+    <button class="btn" bindtap="createTask">一键发送</button>
+  </view>
+</view>

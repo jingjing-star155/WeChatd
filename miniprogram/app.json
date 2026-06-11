@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/products/products",
+    "pages/accounts/accounts"
+  ],
+  "window": {
+    "navigationBarTitleText": "返利群发助手",
+    "navigationBarBackgroundColor": "#0f766e",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f6f7f9"
+  },
+  "tabBar": {
+    "color": "#64748b",
+    "selectedColor": "#0f766e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发送"
+      },
+      {
+        "pagePath": "pages/products/products",
+        "text": "商品"
+      },
+      {
+        "pagePath": "pages/accounts/accounts",
+        "text": "账号"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

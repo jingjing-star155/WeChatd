@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="section panel">
+    <view class="row-between">
+      <view>
+        <view class="title">返利链接</view>
+        <view class="subtitle">来源：http://www.msmds.com.cn/about-us.html</view>
+      </view>
+      <button class="btn compact" loading="{{loading}}" bindtap="refreshProducts">刷新</button>
+    </view>
+  </view>
+
+  <view class="section panel">
+    <view class="filter-title">电商网站</view>
+    <view class="filters">
+      <view class="tag {{platformFilter === item ? 'active' : ''}}" wx:for="{{platforms}}" wx:key="*this" data-value="{{item}}" bindtap="setPlatform">{{item}}</view>
+    </view>
+    <view class="filter-title">商品类型</view>
+    <view class="filters">
+      <view class="tag {{categoryFilter === item ? 'active' : ''}}" wx:for="{{categories}}" wx:key="*this" data-value="{{item}}" bindtap="setCategory">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="product-card" wx:for="{{visibleProducts}}" wx:key="id">
+      <view class="row-between">
+        <view class="product-title">{{item.title}}</view>
+        <view class="score">{{item.score}}</view>
+      </view>
+      <view class="product-url">{{item.url}}</view>
+      <view class="product-meta">
+        <text class="tag">{{item.platform}}</text>
+        <text class="tag">{{item.category}}</text>
+        <text class="tag">{{item.source}}</text>
+      </view>
+    </view>
+    <view wx:if="{{!visibleProducts.length}}" class="empty">没有匹配的返利链接</view>
+  </view>
+</view>

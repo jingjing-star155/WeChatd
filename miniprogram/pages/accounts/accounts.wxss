@@ -1,0 +1,56 @@
+.full {
+  margin-top: 18rpx;
+  width: 100%;
+}
+
+.gap {
+  margin-top: 16rpx;
+}
+
+.label {
+  color: #334155;
+  font-size: 24rpx;
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+
+.picker {
+  align-items: center;
+  border: 1rpx solid #d8dee8;
+  border-radius: 8rpx;
+  display: flex;
+  min-height: 76rpx;
+  padding: 0 20rpx;
+}
+
+.account-card {
+  background: #ffffff;
+  border: 1rpx solid #e6eaf0;
+  border-radius: 8rpx;
+  margin-bottom: 18rpx;
+  padding: 22rpx;
+}
+
+.account-name {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.mini {
+  font-size: 22rpx;
+  min-height: 52rpx;
+  padding: 0 18rpx;
+}
+
+.group-list {
+  border-top: 1rpx solid #edf1f5;
+  margin-top: 18rpx;
+  padding-top: 10rpx;
+}
+
+.group-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 66rpx;
+}

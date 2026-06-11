@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="section panel">
+    <view class="title">微信号与群管理</view>
+    <view class="subtitle">维护可选微信号与微信群，用于生成发送任务。</view>
+  </view>
+
+  <view class="section panel">
+    <view class="label">新增微信号</view>
+    <input class="input" value="{{accountName}}" bindinput="onAccountName" placeholder="例如：运营号A" />
+    <button class="btn full" bindtap="addAccount">添加微信号</button>
+  </view>
+
+  <view class="section panel">
+    <view class="label">新增微信群</view>
+    <picker mode="selector" range="{{accounts}}" range-key="name" bindchange="onAccountPick">
+      <view class="picker">{{groupAccount.name || '选择所属微信号'}}</view>
+    </picker>
+    <input class="input gap" value="{{groupName}}" bindinput="onGroupName" placeholder="例如：内部优惠群01" />
+    <button class="btn full" bindtap="addGroup">添加微信群</button>
+  </view>
+
+  <view class="section">
+    <view class="account-card" wx:for="{{accountsWithGroups}}" wx:key="id">
+      <view class="row-between">
+        <view class="account-name">{{item.name}}</view>
+        <button class="btn ghost mini" data-id="{{item.id}}" bindtap="removeAccount">删除</button>
+      </view>
+      <view class="group-list">
+        <view class="group-row" wx:for="{{item.groups}}" wx:for-item="group" wx:key="id">
+          <text>{{group.name}}</text>
+          <button class="btn ghost mini" data-id="{{group.id}}" bindtap="removeGroup">删除</button>
+        </view>
+        <view wx:if="{{!item.groups.length}}" class="subtitle">暂无群</view>
+      </view>
+    </view>
+    <view wx:if="{{!accounts.length}}" class="empty">先添加一个微信号</view>
+  </view>
+</view>
